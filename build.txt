@@ -1,0 +1,3 @@
+author = LiDucky
+version = 0.1
+displayName = Fractured Skies

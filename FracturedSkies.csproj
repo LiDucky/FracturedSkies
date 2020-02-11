@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\references\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>FracturedSkies</AssemblyName>
+    <TargetFramework>net45</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FNA">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\FNA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Terraria">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\Terraria.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="tModLoader.XNA">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\tModLoader.XNA.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Mono.Addins.MSBuild" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="NuGet.Core">
+      <Package>nuget</Package>
+    </Reference>
+    <Reference Include="tModLoader">
+      <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\tModLoader.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    </Reference>
+    <Reference Include="ReLogicLinux">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\ReLogicLinux.dll</HintPath>
+    </Reference>
+    <Reference Include="ReLogicWindows">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\ReLogicWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="RoslynWrapper">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\RoslynWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\..\..\..\..\.steam\steam\steamapps\common\Terraria\ModCompile\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Core" Version="2.14.0" />
+  </ItemGroup>
+  <Target Name="BuildMod" AfterTargets="Build">
+    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
+  </Target>
+</Project>

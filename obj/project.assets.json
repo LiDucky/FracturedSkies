@@ -1,0 +1,102 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "Microsoft.Web.Xdt/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.XmlTransform.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.XmlTransform.dll": {}
+        }
+      },
+      "NuGet.Core/2.14.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Xdt": "2.1.0"
+        },
+        "compile": {
+          "lib/net40-Client/NuGet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/NuGet.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Web.Xdt/2.1.0": {
+      "sha512": "pQ23sJ99NiZRC6MnWa5jbXZiHo8R4dcPX3ou8YWTeBfkUX4++Olu0hGf64Zfzg1IEqituJXW+WskCflOGxzeTw==",
+      "type": "package",
+      "path": "microsoft.web.xdt/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Web.XmlTransform.dll",
+        "microsoft.web.xdt.2.1.0.nupkg.sha512",
+        "microsoft.web.xdt.nuspec"
+      ]
+    },
+    "NuGet.Core/2.14.0": {
+      "sha512": "P0rzDBgODTRWyakVkB3evtofDcL6gfIXeJqluTwXARZWszJakmMOyrmnXf5E3ZflO6G9fxioGiwfov6mfgzXuQ==",
+      "type": "package",
+      "path": "nuget.core/2.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40-Client/NuGet.Core.dll",
+        "nuget.core.2.14.0.nupkg.sha512",
+        "nuget.core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": [
+      "NuGet.Core >= 2.14.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/martin/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/martin/.local/share/Terraria/ModLoader/Mod Sources/FracturedSkies/FracturedSkies.csproj",
+      "projectName": "FracturedSkies",
+      "projectPath": "/home/martin/.local/share/Terraria/ModLoader/Mod Sources/FracturedSkies/FracturedSkies.csproj",
+      "packagesPath": "/home/martin/.nuget/packages/",
+      "outputPath": "/home/martin/.local/share/Terraria/ModLoader/Mod Sources/FracturedSkies/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/martin/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "dependencies": {
+          "NuGet.Core": {
+            "target": "Package",
+            "version": "[2.14.0, )"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mvroo\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\FracturedSkies\\FracturedSkies.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mvroo\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\FracturedSkies\\FracturedSkies.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mvroo\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\FracturedSkies\\FracturedSkies.csproj",
+        "projectName": "FracturedSkies",
+        "projectPath": "C:\\Users\\mvroo\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\FracturedSkies\\FracturedSkies.csproj",
+        "packagesPath": "C:\\Users\\mvroo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mvroo\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\FracturedSkies\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mvroo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

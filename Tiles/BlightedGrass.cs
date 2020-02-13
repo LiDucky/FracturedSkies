@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace FracturedSkies.Tiles.Ores
+namespace FracturedSkies.Tiles
 {
     public class BlightedGrass : ModTile
     {

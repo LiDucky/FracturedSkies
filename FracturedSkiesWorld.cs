@@ -41,19 +41,20 @@ namespace FracturedSkies
             };
         }
 
-        public override void PreUpdate(){
-            if (Main.rand.Next(0, 1000) == 1) {
-        }
+        public override void PreUpdate() {
             if (Main.rand.Next(0, 1000) == 1 && _numMeteor < 8 && _cataclysm == true) {
-                DropMeteor();
                 _numMeteor++;
+                DropMeteor(_numMeteor);
             }
+        }
+
+        public override void PostUpdate() {
             if (NPC.downedMoonlord) {
                 _cataclysm = true;
             }
         }
 
-        public static void DropMeteor()
+        public static void DropMeteor(int meteorCount)
         {
             bool flag = true;
             for (int i = 0; i < 255; i++)
@@ -105,7 +106,7 @@ namespace FracturedSkies
                             num5 -= 0.5f;
                             break;
                         }
-                        flag = meteor(num7, k);
+                        flag = meteor(num7, k, meteorCount);
                         if (flag)
                         {
                             break;
@@ -124,7 +125,7 @@ namespace FracturedSkies
             }
         }
 
-        public static bool meteor(int i, int j)
+        public static bool meteor(int i, int j, int meteorCount)
         {
             Mod mod = ModLoader.GetMod("FracturedSkies");
             if (i < 100 || i > Main.maxTilesX - 100)
@@ -310,17 +311,19 @@ namespace FracturedSkies
             }
             if (Main.netMode == 0)
             {
-                Main.NewText("A planteray strike has struck nearby", 50, 255, 255, false);
+                if (meteorCount == 1)
+                {
+                    Main.NewText("The earth shakes...", 255, 50, 255, false);
+                } else if (meteorCount == 8)
+                {
+                    Main.NewText("The rapture has ended... for now.", 255, 50, 255, false);
+                }
             }
             if (Main.netMode != 1)
             {
                 NetMessage.SendTileSquare(-1, i, j, 40, TileChangeType.None);
             }
             return true;
-        }
-        public static void oreComet(int x, int y)
-        {
-            DropMeteor();
         }
     }
 }

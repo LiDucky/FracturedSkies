@@ -38,5 +38,10 @@ namespace FracturedSkies.NPCs.Enemies
         {
             return SpawnCondition.Corruption.Chance * 0.5f;
         }
+
+        public override void AI()
+        {
+            npc.velocity.X = 3f * npc.direction; //Pretty awkward...
+        }
     }
 }

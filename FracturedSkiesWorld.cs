@@ -17,6 +17,7 @@ namespace FracturedSkies
 {
     public class FracturedSkiesWorld : ModWorld
     {
+        public int Timer;
         public int _numMeteor;
         public bool _cataclysm;
 
@@ -42,9 +43,23 @@ namespace FracturedSkies
         }
 
         public override void PreUpdate() {
-            if (Main.rand.Next(0, 1000) == 1 && _numMeteor < 8 && _cataclysm == true) {
+            if (Main.rand.Next(0, 1000) == 1 && _numMeteor < 8 && _cataclysm == true)
+            {
                 _numMeteor++;
                 DropMeteor(_numMeteor);
+            }
+            for (int i = 0; i < Main.gore.Length; i++)
+            {
+                if (Main.gore[i].type == GoreID.KingSlimeCrown)
+                {
+                    Main.gore[i].alpha = 1;
+                    Timer++;
+                    if (Timer > 120) // figure out a way to make this reset once the gore disappears. 
+                    {
+                        Main.gore[i].velocity = Main.gore[i].velocity.RotatedBy(Math.PI);
+                        Timer = 0;
+                    }
+                }
             }
         }
 
@@ -324,6 +339,19 @@ namespace FracturedSkies
                 NetMessage.SendTileSquare(-1, i, j, 40, TileChangeType.None);
             }
             return true;
+        }
+        public static void GenDreamlands()
+        {
+            List<GenPass> genPasses = new List<GenPass>();
+            WorldGen.SaveAndQuit();
+            //WorldHooks.ModifyWorldGenTasks();
+            //WorldGen.worldGenCallBack();
+            //WorldGenerator generator = new WorldGenerator(WorldGen._genRandSeed);
+            //generator.GenerateWorld();
+            WorldGen.generateWorld(WorldGen._genRandSeed);
+        }
+        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+        {
         }
     }
 }
